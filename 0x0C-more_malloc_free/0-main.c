@@ -10,8 +10,9 @@
  */
 int main(void)
 {
-    char *c;
-    int *i;
+
+char *c;
+     int *i;
     float *f;
     double *d;
 
