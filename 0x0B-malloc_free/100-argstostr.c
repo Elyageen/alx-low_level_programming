@@ -37,6 +37,10 @@ char *argstostr(int ac, char **av)
 
 		str[k++] = ' '; /* add space after each word */
 	}
+	if (str[k] == '\0')		
+	{
+		str[k++] = '\n';	
+	}
 
 	str[k] = '\0'; /* add null terminator */
 
