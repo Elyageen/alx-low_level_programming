@@ -1,80 +1,45 @@
 #include "main.h"
-		
 #include <stdlib.h>
-		
+
 /**
-		
- * argstostr - main entry
-		
- * @ac: int input
-		
- * @av: double pointer array
-		
- * Return: 0
-		
+ * argstostr - concatenate all command-line arguments
+ * @ac: number of arguments
+ * @av: array of arguments
+ *
+ * Return: concatenated string of arguments
  */
-		
 char *argstostr(int ac, char **av)
-		
 {
-		
-	int i, n, r = 0, l = 0;
-		
+	int i, j, k = 0;
+	int len = 0;
 	char *str;
-		
 
-		
 	if (ac == 0 || av == NULL)
-		
 		return (NULL);
-		
 
-		
 	for (i = 0; i < ac; i++)
-		
 	{
-		
-		for (n = 0; av[i][n]; n++)
-		
-			l++;
-		
+		for (j = 0; av[i][j]; j++)
+			len++;
+		len++; /* for space after each word */
 	}
-		
-	l += ac;
-		
 
-		
-	str = malloc(sizeof(char) * l + 1);
-		
+	len++; /* for the null terminator */
+
+	str = malloc(sizeof(char) * len);
 	if (str == NULL)
-		
 		return (NULL);
-		
+
 	for (i = 0; i < ac; i++)
-		
 	{
-		
-	for (n = 0; av[i][n]; n++)
-		
-	{
-		
-		str[r] = av[i][n];
-		
-		r++;
-		
+		for (j = 0; av[i][j]; j++)
+			str[k++] = av[i][j];
+
+		str[k++] = ' '; /* add space after each word */
 	}
-		
-	if (str[r] == '\0')
-		
-	{
-		
-		str[r++] = '\n';
-		
-	}
-		
-	}
-		
+
+	str[k] = '\0'; /* add null terminator */
+
 	return (str);
-		
 }
 
