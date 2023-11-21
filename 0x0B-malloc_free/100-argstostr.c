@@ -1,49 +1,80 @@
 #include "main.h"
+		
 #include <stdlib.h>
-
+		
 /**
- * argstostr - concatenate all command-line arguments
- * @ac: number of arguments
- * @av: array of arguments
- *
- * Return: concatenated string of arguments
+		
+ * argstostr - main entry
+		
+ * @ac: int input
+		
+ * @av: double pointer array
+		
+ * Return: 0
+		
  */
+		
 char *argstostr(int ac, char **av)
+		
 {
-	int i, j, k = 0;
-	int len = 0;
+		
+	int i, n, r = 0, l = 0;
+		
 	char *str;
+		
 
+		
 	if (ac == 0 || av == NULL)
+		
 		return (NULL);
+		
 
+		
 	for (i = 0; i < ac; i++)
+		
 	{
-		for (j = 0; av[i][j]; j++)
-			len++;
-		len++; /* for space after each word */
+		
+		for (n = 0; av[i][n]; n++)
+		
+			l++;
+		
 	}
+		
+	l += ac;
+		
 
-	len++; /* for the null terminator */
-
-	str = malloc(sizeof(char) * len);
+		
+	str = malloc(sizeof(char) * l + 1);
+		
 	if (str == NULL)
+		
 		return (NULL);
-
+		
 	for (i = 0; i < ac; i++)
+		
 	{
-		for (j = 0; av[i][j]; j++)
-			str[k++] = av[i][j];
-
-		str[k++] = ' '; /* add space after each word */
-	}
-	if (str[k] == '\0')		
+		
+	for (n = 0; av[i][n]; n++)
+		
 	{
-		str[k++] = '\n';	
+		
+		str[r] = av[i][n];
+		
+		r++;
+		
 	}
-
-	str[k] = '\0'; /* add null terminator */
-
+		
+	if (str[r] == '\0')
+		
+	{
+		
+		str[r++] = '\n';
+		
+	}
+		
+	}
+		
 	return (str);
+		
 }
 
