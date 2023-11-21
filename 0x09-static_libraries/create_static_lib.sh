@@ -1,3 +1,3 @@
-#!/bin/bash
-gcc -wall -pedantic -werror -wextra -c *.c
-ar cr liball.a *.o
+#!/bin/nash
+gcc -Wall -pedantic -Werror -Wextra -c *.c
+
