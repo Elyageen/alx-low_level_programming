@@ -8,6 +8,9 @@
 	 * @separator: The string to be printed between numbers.
 	 * @n: The number of integers passed to the function.
 	 * @...: A variable number of numbers to be printed.
+	 * Description print_numbers : This function takes a variable number of integers and prints
+ * them to the standard output. The numbers are separated by the specified
+ * separator string, and a newline character is printed at the end.
 	 */
 	void print_numbers(const char *separator, const unsigned int n, ...)
 	{
