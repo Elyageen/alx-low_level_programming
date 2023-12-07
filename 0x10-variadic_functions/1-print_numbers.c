@@ -11,24 +11,11 @@
  * takes a variable number of integers and prints
  * them to the standard output. The numbers are separated by the specified
  * separator string, and a newline character is printed at the end.
-<<<<<<< HEAD
-	 */
-	void print_numbers(const char *separator, const unsigned int n, ...)
-	{
-		va_list nums;
-		unsigned int index;
-
-
-
-		va_start(nums, n);
-
-=======
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list nums;
 	unsigned int index;
->>>>>>> 59b50ea9a6c755ed518c467f651187db2e240447
 
 	va_start(nums, n);
 
